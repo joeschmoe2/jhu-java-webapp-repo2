@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="JspServlets:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="Servlets-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="JspServlets:war exploded" />
+    </root>
+  </artifact>
+</component>
