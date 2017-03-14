@@ -51,7 +51,7 @@ public class Validation extends HttpServlet {
             "</head>\n" +
             "<body style='margin-right:10%; margin-left:10%; background-color: navy'> \n" +
                 "<div style='background-color:navajowhite'>\n" +
-                "<a href='/index.html'><img src='img/jhu_logo.png' title='JOHNS HOPKINS UNIVERSITY' /></a>\n" +
+                "<a href='/index.jsp'><img src='img/jhu_logo.png' title='JOHNS HOPKINS UNIVERSITY' /></a>\n" +
                 "<div style='background-color: beige;box-shadow: navajowhite'>\n" +
                 "<div style='margin-left:30px;padding-top:15px;padding-left:15px;'>\n");
 

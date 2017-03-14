@@ -1,6 +1,7 @@
+<%@ page import="beans.Registration" %>
 <html>
 <head>
-    <title>Joe Offutt's Assignment 4</title>
+    <title>Joe Offutt's Assignment 5</title>
     <style>
         table, th, td {
             border: 1px solid black;
@@ -11,18 +12,25 @@
     <div style="background-color:navajowhite">
         <img src="img/jhu_logo.png" title="JOHNS HOPKINS UNIVERSITY" />
         <div style="background-color: beige;box-shadow: navajowhite">
+            <% Registration registration = (Registration) session.getAttribute("registration")
+            ;
+            if (registration == null)
+            {
+            registration = new Registration();
+            }
+            %>
             <div style=""><h2>Johns Hopkins Annual Software Development Seminar</h2></div>
         <!-- TODO add line -->
 
-            <form action="validate" method="post">
-                <div style="border: 1px solid burlywood; marign-left:5%;margin-right:5%">
+            <form action="results.jsp" method="post">
+                <div style="border: 1px solid burlywood; margin-left:5%;margin-right:5%">
                     <div style = "margin-left:7%; margin-right:7%; margin-bottom:3%">
                         <h3>Contact Information</h3>
-                        <p>Name: <input type="text" name = "name" placeholder="Enter Name" /> </p>
-                        <p>Email: <input type="text" name = "email" placeholder="Enter Email" /> </p>
+                        <p>Name: <input type="text" name = "name" placeholder="Enter Name" value="<%=registration.getName()%>"/> </p>
+                        <p>Email: <input type="text" name = "email" placeholder="Enter Email" value="<%=registration.getEmail()%>"/> </p>
                     </div>
                 </div>
-                <div style="border: 1px solid burlywood; marign-left:5%;margin-right:5%">
+                <div style="border: 1px solid burlywood; margin-left:5%;margin-right:5%">
                     <div style = "margin-left:7%; margin-right:7%; margin-bottom:3%">
                         <h3>Select Your Courses</h3>
                         <select name="courses" multiple>
@@ -33,7 +41,7 @@
                         </select>
                     </div>
                 </div>
-                <div style="border: 1px solid burlywood; marign-left:5%;margin-right:5%">
+                <div style="border: 1px solid burlywood; margin-left:5%;margin-right:5%">
                     <div style = "margin-left:7%; margin-right:7%; margin-bottom:3%">
                         <h3>Employment Status</h3>
                         <input type="radio" name="employment" value="student" /> jhu student
@@ -42,7 +50,7 @@
                         <input type="radio" name="employment" value="other" /> other
                     </div>
                 </div>
-                <div style="border: 1px solid burlywood; marign-left:5%;margin-right:5%">
+                <div style="border: 1px solid burlywood; margin-left:5%;margin-right:5%">
                     <div style = "margin-left:7%; margin-right:7%; margin-bottom:3%">
                         <h3>Additional Fees and Charges</h3>
                         <input type="checkbox" name="fees" value="parking" /> Parking <br />
