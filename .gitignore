@@ -1,7 +1,6 @@
 .idea
 .gitignore
 .idea/vcs.xml
-src/main/resources/
 src/main/webapp/WEB-INF/classes/
 src/test/
 target/Servlets-1.0-SNAPSHOT/META-INF/

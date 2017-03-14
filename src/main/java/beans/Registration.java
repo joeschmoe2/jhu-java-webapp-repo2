@@ -69,19 +69,23 @@ public class Registration implements Serializable {
         this.fees = fees;
     }
     public void removeCourse(String value){
+        int i = Integer.parseInt(value);
         try {
-            int i = Integer.parseInt(value);
-            String[] newCourses = new String[this.courses.length-1];
-            for(int x=0;x<this.courses.length;x++){
-                if(x<i)
-                    newCourses[x] = this.courses[x];
-                else if(x>i)
-                    newCourses[x-1] = this.courses[x];
+            if(this.courses.length > 1) {
+                String[] newCourses = new String[this.courses.length - 1];
+                for (int x = 0; x < this.courses.length; x++) {
+                    if (x < i)
+                        newCourses[x] = this.courses[x];
+                    else if (x > i)
+                        newCourses[x - 1] = this.courses[x];
+                }
+                this.courses = newCourses;
             }
-            this.courses = newCourses;
+            else
+                this.courses = null;
         }
         catch (Exception exc){
-            throw new RuntimeException("Course not found : " + exc.getMessage());
+            throw new RuntimeException("Course not found : " + exc.getMessage() + " :: " + i);
         }
     }
 }
