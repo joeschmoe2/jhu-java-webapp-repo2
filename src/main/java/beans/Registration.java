@@ -16,9 +16,9 @@ public class Registration implements Serializable {
     public Registration() {
         name ="";
         email ="";
-        courses = new String[1];
+        courses = null;
         employment = "";
-        fees = new String[1];
+        fees = null;
     }
 
     public Registration(String name, String email, String[] courses, String employment, String[] fees) {
@@ -70,22 +70,29 @@ public class Registration implements Serializable {
     }
     public void removeCourse(String value){
         int i = Integer.parseInt(value);
+        String errorTracker="";
         try {
-            if(this.courses.length > 1) {
+            errorTracker+="Step 1";
+            if(this.courses != null && this.courses.length > 1) {
+                errorTracker+=", Step 2";
                 String[] newCourses = new String[this.courses.length - 1];
+                errorTracker+=", Step 3";
                 for (int x = 0; x < this.courses.length; x++) {
+                    errorTracker+=", Step 4";
                     if (x < i)
                         newCourses[x] = this.courses[x];
                     else if (x > i)
                         newCourses[x - 1] = this.courses[x];
                 }
+                errorTracker+=", Step 5";
                 this.courses = newCourses;
+                errorTracker+=", Step 6";
             }
             else
                 this.courses = null;
         }
         catch (Exception exc){
-            throw new RuntimeException("Course not found : " + exc.getMessage() + " :: " + i);
+            throw new RuntimeException("Course not found : " + exc.getMessage() + " :: " + errorTracker);
         }
     }
 }

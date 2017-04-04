@@ -137,8 +137,8 @@
                             else if(fees[0].equals("parking"))
                                 body+="parking ($10.00)\n";
 
-                            body+="\n\nYour total comes to: $" + total;
-                            body+="\nThanks for signing up, \nJoff";
+                            body+="\n\n Your total comes to: $" + total;
+                            body+="\n Thanks for signing up, \n Joff";
                         %>
                         <input type="hidden" name = "subject" value="<%=subject%>"/>
                         <input type="hidden" name = "body" value="<%=body%>"/>
